@@ -1,1 +1,1 @@
-echo %1  > filename.txt
+echo $1  > filename.txt
