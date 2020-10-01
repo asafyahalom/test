@@ -1,1 +1,1 @@
-echo $P1  > filename.txt
+echo 'bla'  > filename.txt
