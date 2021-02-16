@@ -1,1 +1,1 @@
-New-Item -Path "c:\" -Name "testfile.txt" -ItemType "file" -Value "This is a test file"
+New-Item -Path . -Name "testfile.txt" -ItemType "file" -Value "This is a test file"
