@@ -1,1 +1,1 @@
-echo aaaaaaaa
+echo $env:Global
