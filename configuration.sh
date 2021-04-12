@@ -1,1 +1,1 @@
-echo $env:Global
+echo asaf has invaded your sandbox
