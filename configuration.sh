@@ -1,1 +1,1 @@
-echo asaf has invaded your sandbox
+echo aaaa > /root/Desktop/output.txt
