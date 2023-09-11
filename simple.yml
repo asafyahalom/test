@@ -1,5 +1,8 @@
 ---
-- hosts: all
+- name: Sleep for 3 minutes and print 'gotta get up'
+  hosts: all
   tasks:
-  - name: Print Hello World
-    debug: msg="Hello World"
+    - name: Sleep for 3 minutes
+      command: sleep 180
+    - name: Print 'gotta get up'
+      command: echo 'gotta get up'
