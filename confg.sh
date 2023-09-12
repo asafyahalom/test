@@ -1,1 +1,2 @@
-echo running configuration.sh
+sleep 180
+echo 'wubba lubba dub dub'
