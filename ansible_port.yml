@@ -1,6 +1,6 @@
 ---
 - name: Playbook with customizable port
-  hosts: your_target_host
+  hosts: all
   vars:
     ansible_ssh_port: "{{ port }}"
   tasks:
