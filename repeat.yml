@@ -1,0 +1,24 @@
+---
+- name: Print Message Every 5 Seconds for 3 Minutes
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Print 'please kill me' every 5 seconds
+      command: echo 'please kill me'
+      register: result
+      changed_when: false
+      ignore_errors: true
+      async: 180  # Run for 3 minutes (60 seconds * 3)
+      poll: 5  # Poll every 5 seconds
+
+    - name: Wait for 3 minutes
+      async_status:
+        jid: "{{ result.ansible_job_id }}"
+      register: job_result
+      until: job_result.finished
+      retries: 36  # Retry 36 times (5 seconds * 36 = 3 minutes)
+      delay: 5  # Wait 5 seconds between retries
+
+    - name: Print the final message
+      debug:
+        msg: 'Finished printing "please kill me" every 5 seconds for 3 minutes'
